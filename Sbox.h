@@ -1,20 +1,14 @@
-#ifndef SBOX4_H_INCLUDED
-#define SBOX4_H_INCLUDED
-
 #include <map>
 #include <string>
+#include <bitset>
 
 typedef int INT4BIT;
-
-// Forward declaration
-class Permutation16;
 
 /*
  * An S-box with length 4
  */
-class Sbox4
+class Sbox
 {
-  friend class Permutation16;
   private:
     /*
      * The map that maps each plaintext block to the associated ciphertext block
@@ -25,8 +19,6 @@ class Sbox4
 
   public:
 
-    Sbox4(std::string);
-    unsigned int encrypt32(unsigned int);
+    template <size_t N>
+    std::bitset<N> encrypt32(std::bitset<N>);
 };
-
-#endif
