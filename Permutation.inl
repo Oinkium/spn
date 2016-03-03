@@ -11,10 +11,9 @@ std::bitset<L> Permutation<N>::permute(std::bitset<L> plaintext)
   std::bitset<L> cipher_text(0x0);
 
   // Split the cipher text into N-bit words and permute the words.
-  for (size_t i = 0 ; i < N ; i+=N)
+  for (size_t i = 0 ; i < L ; i+=N)
   {
-    // Get the current n-bit word by shifting the plaintext by the right number of bits and then
-    // masking with the mask we created earlier.
+    // Set up the current N-bit word.
     std::bitset<N> current_word;
 
     for (size_t j = 0 ; j < N ; ++j)
@@ -40,7 +39,7 @@ std::bitset<L> Permutation<N>::permute(std::bitset<L> plaintext)
 
     for (size_t j = 0 ; j < N ; ++j)
     {
-      cipher_text.set(i + j, permuted_word[i]);
+      cipher_text.set(i + j, permuted_word[j]);
     }
   }
 

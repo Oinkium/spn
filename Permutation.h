@@ -4,9 +4,6 @@
 #include <map>
 #include <bitset>
 
-// Forward declaration
-class Sbox;
-
 /*
  * A permutation of a given length N.
  */

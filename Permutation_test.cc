@@ -12,15 +12,15 @@ int main()
 
   std::bitset<32> plaintext(0xFACEF11C);
 
-  std::cout << "Plaintext: " << std::hex << plaintext << std::endl;
+  std::cout << "Plaintext:\t\t" << std::hex << plaintext << std::endl;
 
   plaintext = permutation.permute<32>(plaintext);
 
-  std::cout << "Enciphered once: " << std::hex << plaintext << std::endl;
+  std::cout << "Enciphered once:\t" << std::hex << plaintext << std::endl;
 
   plaintext = permutation.permute<32>(plaintext);
 
-  std::cout << "Enciphered twice: " << std::hex << plaintext << std::endl;
+  std::cout << "Enciphered twice:\t" << std::hex << plaintext << std::endl;
 
   return(0);
 }
